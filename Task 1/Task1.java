@@ -1,5 +1,4 @@
-import java.util.Scanner;
-import java.util.Random;
+import java.util.*;
 
 public class Task1 {
     public static void main(String[] args) {
@@ -16,16 +15,16 @@ public class Task1 {
         System.out.println("You need to guess a number between " + minRange + " and " + maxRange + ".");
         System.out.println("You have " + maxAttempts + " attempts per round.");
 
+        
         boolean playAgain = true;
         while (playAgain) {
             int targetNumber = random.nextInt(maxRange - minRange + 1) + minRange;
             int attempts = 0;
-
             System.out.println("\nRound " + (rounds + 1));
             while (attempts < maxAttempts) {
                 System.out.print("Enter your guess: ");
                 int userGuess = scanner.nextInt();
-                scanner.nextLine();  // Consume the newline character
+                scanner.nextLine();  
 
                 if (userGuess < minRange || userGuess > maxRange) {
                     System.out.println("Please enter a number between " + minRange + " and " + maxRange + ".");
@@ -54,7 +53,7 @@ public class Task1 {
             playAgain = playAgainInput.equalsIgnoreCase("yes");
         }
 
-        System.out.println("\nGame over! You played " + rounds + " rounds and your total score is " + score + ".");
+        System.out.println ("\nGame over! You played " + rounds + " rounds and your total score is " + score + ".");
         scanner.close();
     }
 }
